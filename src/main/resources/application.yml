@@ -1,0 +1,26 @@
+spring:
+  application:
+      name: person-api
+  data:
+    mongodb:
+      database: person-api-db
+
+jwt:
+  secret: secret
+
+---
+spring:
+  data:
+    mongodb:
+      host: api-database
+  config:
+    activate:
+      on-profile: docker
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8082
+---
