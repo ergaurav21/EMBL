@@ -7,7 +7,7 @@ pipeline {
     	stage("Checkout") {   
         	agent { label 'Slave-1' }
         	steps {               	 
-            	git url: 'https://github.com/ergaurav21/EMBL.git'          	 
+            	git url: 'https://github.com/ergaurav21/EMBL.git'         	 
            	 
         	}    
     	}
@@ -24,7 +24,7 @@ pipeline {
     	stage("Unit test") {          	 
         	agent { label 'Slave-1' }
         	steps {  	 
-            	
+            	git url:  'https://github.com/ergaurav21/EMBL.git'
             
                  sh "docker-compose up -d"
             	sh "mvn test"  
